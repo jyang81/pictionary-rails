@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
     def index
         @users = User.all
-       render json: @users
+        render json: @users
     end
 
     def create 
@@ -11,9 +11,13 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update 
-        @user = user.find(params[:id])
-        @user.update(user_params)
-        @user = user.find(params[:id])
+        @user = User.find(params[:id])
+        if params[:games_won] != nil
+            @user.update(game_id: params[:game_id],games_won: params[:games_won])
+        else
+            @user.update(game_id: params[:game_id])
+        end 
+        @user = User.find(params[:id])
         render json: @user
     end
 
@@ -21,6 +25,6 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params 
-        params.require(:user).permit(:name, :games_won, game_id)
+        params.require(:user).permit(:name, :games_won)
     end
 end
