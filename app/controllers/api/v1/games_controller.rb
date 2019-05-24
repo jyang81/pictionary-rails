@@ -6,7 +6,9 @@ class Api::V1::GamesController < ApplicationController
     end
 
     def destroy 
+        byebug
         @game = Game.find(params[:id])
+        User.end_game(@game.id)
         @game.destroy
         render json: @game
     end
