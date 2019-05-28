@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :name
       t.integer :games_won
-      t.string :game_id
+      t.integer :game_id
       t.timestamps
     end
   end
