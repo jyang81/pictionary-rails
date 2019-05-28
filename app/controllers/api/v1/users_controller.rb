@@ -4,10 +4,14 @@ class Api::V1::UsersController < ApplicationController
         render json: @users
     end
 
+    def profile
+        render json: { user: UserSerializer.new(current_user) }, status: :accepted
+      end
+
     def create 
-        @user = User.find_or_create_by(user_params)
+        @user = User.new(user_params)
         @user.save
-        render json: @user
+        render json: { user: UserSerializer.new(@user) }, status: :created
     end
 
     def update 
