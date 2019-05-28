@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :words, only: [:index]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      mount ActionCable.server => '/cable'
     end
   end
 end
