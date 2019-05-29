@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_one :game
+    has_many :chat_messages
 
     def self.end_game(game_id) 
         self.all.each do |user|
