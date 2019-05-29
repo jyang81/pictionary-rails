@@ -2,7 +2,7 @@ class Game < ApplicationRecord
     has_many :users
 
     def self.checkForWinner(guess) 
-        if self.first.word == guess["content"] && self.first.drawer_name != guess['user_name']
+        if self.first.word.downcase == guess["content"].downcase && self.first.drawer_name != guess['user_name']
             winning_guesser = User.find(guess['user_id'])
             guesser_games_won = winning_guesser.games_won.to_i + 1
             winning_guesser.update(games_won: guesser_games_won)
@@ -12,9 +12,9 @@ class Game < ApplicationRecord
             winning_drawer.update(games_won: drawer_games_won)
             
             ChatMessage.create(
-         content: "Winner is #{winning_guesser.name}",
-         user_id: 1,
-         user_name:'EvilHost')
+                content: "Winner is #{winning_guesser.name}",
+                user_id: 1,
+                user_name:'EvilHost')
         end 
     end
 end
