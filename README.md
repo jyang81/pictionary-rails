@@ -1,2 +1,3 @@
-# pictionary
-A pictionary style drawing game based off of Yahoo Graffiti
+# React Pictionary
+
+Backend server for online pictionary style drawing game
