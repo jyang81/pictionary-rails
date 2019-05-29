@@ -11,5 +11,6 @@ class ChatChannel < ApplicationCable::Channel
          user_id:  opts.fetch('user_id'),
          user_name: opts.fetch('user_name')
        )
+       Game.checkForWinner(opts)
      end
   end

@@ -11,10 +11,6 @@ User.destroy_all
 Game.destroy_all
 Word.destroy_all
 
-User.create(name: "Joe", games_won: 0, game_id: 1)
-User.create(name: "Jon", games_won: 0, game_id: 1)
-
-
 Word.create(word: "whale")
 Word.create(word: "water bottle")
 Word.create(word: "whiteboard")
