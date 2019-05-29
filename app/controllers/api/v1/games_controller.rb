@@ -7,6 +7,10 @@ class Api::V1::GamesController < ApplicationController
     
     def create
         @game = Game.new()
+        index = rand(Word.all.length)
+        @game.word = Word.all[index].word
+        @game.drawer_id = params['drawer_id']
+        @game.drawer_name = params['drawer_name']
         @game.save
         render json: @game
     end
