@@ -14,4 +14,11 @@ class CanvasChannel < ApplicationCable::Channel
       coordinates: opts.fetch('coordinates')
     )
   end
+
+  def clear(opts)
+    ActionCable
+    .server
+    .broadcast('canvas_channel',
+               clear: 'clear')
+  end
 end
