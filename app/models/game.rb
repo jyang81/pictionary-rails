@@ -15,6 +15,8 @@ class Game < ApplicationRecord
                 content: "Attention please, #{winning_guesser.name} guessed correctly with #{guess['content']}",
                 user_id: 1,
                 user_name:'EvilHost')
+            
+            GameManager.create(command: 'End')
         end 
     end
 end
