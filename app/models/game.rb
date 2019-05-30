@@ -12,7 +12,7 @@ class Game < ApplicationRecord
             winning_drawer.update(games_won: drawer_games_won)
             
             ChatMessage.create(
-                content: "Winner is #{winning_guesser.name}",
+                content: "Attention please, #{winning_guesser.name} guessed correctly with #{guess['content']}",
                 user_id: 1,
                 user_name:'EvilHost')
         end 
