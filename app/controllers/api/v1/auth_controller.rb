@@ -6,6 +6,9 @@ class Api::V1::AuthController < ApplicationController
       @user = User.find_or_create_by(name: params[:name])
       if @user
         # encode token comes from ApplicationController
+        if Game.all.length > 0
+          GameManager.create(command: 'Started')
+        end
         token = encode_token({ user_id: @user.id })
         render json: { user: @user, jwt: token }, status: :accepted
       else
