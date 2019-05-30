@@ -20,6 +20,8 @@ class Api::V1::GamesController < ApplicationController
         @game = Game.find(params[:id])
         User.end_game(@game.id)
         @game.destroy
+        Line.destroy_all
+        ChatMessage.destroy_all
         render json: @game
     end
 end
