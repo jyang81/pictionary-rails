@@ -1,3 +1,3 @@
 # React Pictionary
 
-Backend server for online pictionary style drawing game
+Backend Rails server for React Pictionary
