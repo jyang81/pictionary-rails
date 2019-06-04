@@ -1,10 +1,10 @@
 class Api::V1::GamesController < ApplicationController
-    
+
     def index
         @games = Game.all
         render json: @games
     end
-    
+
     def create
         @game = Game.new()
         index = rand(Word.all.length)
@@ -16,10 +16,11 @@ class Api::V1::GamesController < ApplicationController
         render json: @game
     end
 
-    def destroy 
+    def destroy
         @game = Game.find(params[:id])
         User.end_game(@game.id)
-        @game.destroy
+        # @game.destroy
+        Game.destroy_all
         Line.destroy_all
         ChatMessage.destroy_all
         render json: @game
