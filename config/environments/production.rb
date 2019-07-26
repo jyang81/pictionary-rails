@@ -4,7 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.middleware.use ChatActionCable
+  # config.middleware.use ChatActionCable
   config.web_socket_server_url = 'wss://react-pictionary-backend.herokuapp.com/api/v1/'
 
   # Eager load code on boot. This eager loads most of Rails and
