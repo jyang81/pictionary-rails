@@ -23,8 +23,5 @@ module Pictionary_Backend
     config.load_defaults 5.2
 
     config.api_only = true
-
-    # testing to see if this line does anything ****
-    config.action_cable.mount_path = '/cable'
   end
 end

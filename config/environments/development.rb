@@ -1,8 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # testing to see if this line does anything ***
-  config.action_cable.url = "wss://react-pictionary-backend.herokuapp.com/cable"
+  # config.action_cable.url = "ws://react-pictionary-backend.herokuapp.com/cable"
 
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
