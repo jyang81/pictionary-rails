@@ -8,3 +8,4 @@ production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") { "redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-3-222-170-103.compute-1.amazonaws.com:12599" } %>
   channel_prefix: Pictionary_production
+  
