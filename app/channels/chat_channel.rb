@@ -7,10 +7,10 @@ class ChatChannel < ApplicationCable::Channel
   
     def create(opts)
       ChatMessage.create(
-         content: opts.fetch('content'),
-         user_id:  opts.fetch('user_id'),
-         user_name: opts.fetch('user_name')
-       )
-       Game.checkForWinner(opts)
-     end
+        content: opts.fetch('content'),
+        user_id:  opts.fetch('user_id'),
+        user_name: opts.fetch('user_name'),
+      )
+      Game.checkForWinner(opts)
+      end
   end
