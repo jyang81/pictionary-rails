@@ -8,6 +8,19 @@ class ManagerChannel < ApplicationCable::Channel
   end
 
   def create(opts)
-    GameManager.create(command: opts.fetch('command'))
+    GameManager.create(command: 'updatedGameState', payload: opts.fetch('command'))
+  end
+
+  def addUserToGame(opts)
+    game = Game.find(opts.gameId)
+    users = game.users 
+    users.push(opts.username)
+    game.users = users
+    game.save
+    GameManager.create(command: 'updatedUsers', payload: users)
+  end
+
+  def removeUserFromGame(opts)
+
   end
 end
