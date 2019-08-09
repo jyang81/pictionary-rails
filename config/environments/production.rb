@@ -5,7 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   # config.middleware.use ChatActionCable
-  config.web_socket_server_url = "wss://react-pictionary-backend.herokuapp.com/cable"
+  config.web_socket_server_url = "wss://react-pictionary-backend.herokuapp.com/api/v1/cable"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -38,7 +38,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://react-pictionary-backend.herokuapp.com', 'http://react-pictionary-backend.herokuapp.com' ]
+  config.action_cable.allowed_request_origins = [ 'https://react-pictionary-backend.herokuapp.com', 'http://react-pictionary-backend.herokuapp.com', 'http:localhost:3001' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
