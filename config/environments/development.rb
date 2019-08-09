@@ -4,7 +4,6 @@ Rails.application.configure do
   # config.action_cable.url = "wss://react-pictionary-backend.herokuapp.com/cable"
   config.action_cable.url = "ws://localhost:3000/cable"
 
-  config.action_cable.allowed_request_origins = [/*/]
   # config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
   # In the development environment your application's code is reloaded on
