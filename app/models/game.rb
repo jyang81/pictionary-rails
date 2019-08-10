@@ -10,7 +10,7 @@ class Game < ApplicationRecord
                 user_id: 1,
                 user_name:'EvilHost')
             
-            GameManager.create(command: 'End')
+            GameManager.create(command: 'updatedGameState', payload: 'End')
         end 
     end
 
