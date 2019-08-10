@@ -12,7 +12,7 @@ class Api::V1::GamesController < ApplicationController
         @game.drawer_id = params['drawer_id']
         @game.drawer_name = params['drawer_name']
         @game.save
-        GameManager.create(command: 'Started')
+        GameManager.create(command: 'updatedGameState', payload: opts.fetch('command'))
         render json: @game
     end
 
