@@ -7,8 +7,14 @@ class ManagerChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def create(opts)
-    GameManager.create(command: 'updatedGameState', payload: opts.fetch('command'))
+  def updateGameState(opts)
+    # GameManager.create(command: 'updatedGameState', payload: opts.fetch('command'))
+    ActionCable
+    .server
+    .broadcast('manager_channel',
+      command: 'updatedGameState',
+      payload: opts.payload 
+    )
   end
 
   def addUserToGame(opts)
@@ -17,7 +23,13 @@ class ManagerChannel < ApplicationCable::Channel
     users.push(opts.username)
     game.users = users
     game.save
-    GameManager.create(command: 'updatedUsers', payload: users)
+    # GameManager.create(command: 'updatedUsers', payload: users)
+    ActionCable
+    .server
+    .broadcast('manager_channel',
+      command: 'updatedUsers',
+      payload: users 
+    )
   end
 
   def removeUserFromGame(opts)
