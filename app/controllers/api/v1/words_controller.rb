@@ -1,8 +1,8 @@
-class Api::V1::WordsController < ApplicationController
+class Api::V1::LinesController < ApplicationController
   skip_before_action :authorized
 
   def index
-    @words = Word.all
-    render json: @words
+    @lines = Line.all
+    render json: @lines
   end
 end
