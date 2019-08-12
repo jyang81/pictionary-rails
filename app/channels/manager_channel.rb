@@ -24,6 +24,7 @@ class ManagerChannel < ApplicationCable::Channel
     game.users = users
     game.save
     # GameManager.create(command: 'updatedUsers', payload: users)
+    puts "adding user to game here is game info: #{game}"
     ActionCable
     .server
     .broadcast('manager_channel',
