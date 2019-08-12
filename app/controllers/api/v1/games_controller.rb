@@ -11,6 +11,7 @@ class Api::V1::GamesController < ApplicationController
         @game.word = Word.all[index].word
         @game.drawer_id = params['drawer_id']
         @game.drawer_name = params['drawer_name']
+        @game.users.push(User.find(params['drawer_id']))
         @game.save
         ManagerChannel.updatedGameState(payload: 'Started')
         render json: @game
