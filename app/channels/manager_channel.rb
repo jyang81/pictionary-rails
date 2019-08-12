@@ -13,14 +13,15 @@ class ManagerChannel < ApplicationCable::Channel
     .server
     .broadcast('manager_channel',
       command: 'updatedGameState',
-      payload: opts.payload 
+      payload: opts.fetch('payload')
     )
   end
 
   def addUserToGame(opts)
-    game = Game.find(opts.gameId)
+    # game = Game.find(opts.fetch('gameId')) # uncomment for multigame
+    game = Game.all.first # This is temporary until multi game is implimented
     users = game.users 
-    users.push(User.where(opts.username))
+    users.push(User.where(opts.fetch('username')))
     game.users = users
     game.save
     # GameManager.create(command: 'updatedUsers', payload: users)
