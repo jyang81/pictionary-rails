@@ -13,7 +13,11 @@ class Api::V1::GamesController < ApplicationController
         @game.drawer_name = params['drawer_name']
         @game.users.push(User.find(params['drawer_id']))
         @game.save
-        ManagerChannel.updatedGameState(payload: 'Started')
+        # ManagerChannel.updatedGameState(payload: 'Started')
+        game_command = GameManager.new
+        game_command.command = "updatedGameState"
+        game_command.payload = ["Started"]
+        GameManagerCreationEventBroadcastJob.perform_now(game_command)
         render json: @game
     end
 
