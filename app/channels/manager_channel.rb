@@ -21,7 +21,7 @@ class ManagerChannel < ApplicationCable::Channel
     # game = Game.find(opts.fetch('gameId')) # uncomment for multigame
     game = Game.all.first # This is temporary until multi game is implimented
     users = game.users 
-    users.push(User.where(opts.fetch('username')))
+    users.push(User.where(name: opts.fetch('username')))
     game.users = users
     game.save
     # GameManager.create(command: 'updatedUsers', payload: users)
