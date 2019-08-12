@@ -20,7 +20,7 @@ class ManagerChannel < ApplicationCable::Channel
   def addUserToGame(opts)
     game = Game.find(opts.gameId)
     users = game.users 
-    users.push(opts.username)
+    users.push(User.where(opts.username))
     game.users = users
     game.save
     # GameManager.create(command: 'updatedUsers', payload: users)
