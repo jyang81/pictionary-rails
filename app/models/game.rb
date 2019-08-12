@@ -10,8 +10,8 @@ class Game < ApplicationRecord
                 user_id: 1,
                 user_name:'EvilHost')
             
-            # GameManager.create(command: 'updatedGameState', payload: 'End')
-            ManagerChannel.updatedGameState(payload: 'End')
+            game_command = GameManager.new(command: 'updatedGameState', payload: ['End'])
+            GameManagerCreationEventBroadcastJob.perform_now(game_command)
         end 
     end
 
