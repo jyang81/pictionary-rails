@@ -22,7 +22,7 @@ class Game < ApplicationRecord
     end 
 
     def self.incrementDrawerPoints(guess)
-        game = Game.find(guess["game_id"])
+        game = Game.all.first
         winning_drawer = User.find(game.drawer_id)
         drawer_games_won = winning_drawer.games_won.to_i + 1
         winning_drawer.update(games_won: drawer_games_won)
