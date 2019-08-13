@@ -19,7 +19,19 @@ class CanvasChannel < ApplicationCable::Channel
     Line.destroy_all
     ActionCable
     .server
-    .broadcast('canvas_channel',
-               clear: 'clear')
+    .broadcast(
+      'canvas_channel',
+      clear: 'clear'
+    )
+  end
+
+  def undo(opts)
+    Line.last.destroy
+    ActionCable
+    .server
+    .broadcast(
+      'canvas_channel',
+      undo: 'undo'
+    )
   end
 end
