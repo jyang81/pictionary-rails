@@ -16,6 +16,7 @@ class CanvasChannel < ApplicationCable::Channel
   end
 
   def clear(opts)
+    Line.destroy_all
     ActionCable
     .server
     .broadcast('canvas_channel',
