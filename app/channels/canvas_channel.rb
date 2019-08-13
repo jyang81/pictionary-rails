@@ -26,12 +26,14 @@ class CanvasChannel < ApplicationCable::Channel
   end
 
   def undo(opts)
-    Line.last.destroy
-    ActionCable
-    .server
-    .broadcast(
-      'canvas_channel',
-      undo: 'undo'
-    )
+    if Line.last
+      Line.last.destroy
+      ActionCable
+      .server
+      .broadcast(
+        'canvas_channel',
+        undo: 'undo'
+      )
+    end
   end
 end
