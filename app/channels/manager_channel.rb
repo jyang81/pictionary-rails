@@ -41,7 +41,7 @@ class ManagerChannel < ApplicationCable::Channel
     game = Game.all.first # This is temporary until multi game is implimented
     if game
       users = game.users 
-      users.destroy(User.where(name: opts.fetch('username')))
+      users.delete(User.where(name: opts.fetch('username')))
       game.users = users
       game.save
       # GameManager.create(command: 'updatedUsers', payload: users)
