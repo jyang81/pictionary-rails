@@ -16,7 +16,7 @@ class Game < ApplicationRecord
     end
 
     def self.incrementGuesserPoints(guess) 
-        winning_guesser = User.find_by(guess.user_name)
+        winning_guesser = User.find_by(name: guess.user_name)
         if winning_guesser
             guesser_games_won = winning_guesser.games_won.to_i + 1
             winning_guesser.update(games_won: guesser_games_won)
