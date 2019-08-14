@@ -3,7 +3,8 @@ class Api::V1::AuthController < ApplicationController
   
     # login
     def create
-      @user = User.find_or_create_by(name: params[:name])
+      username = params[:name].downcase
+      @user = User.find_or_create_by(name: username)
       if @user
         # encode token comes from ApplicationController
         if Game.all.length > 0
