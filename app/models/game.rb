@@ -25,7 +25,7 @@ class Game < ApplicationRecord
 
     def self.incrementDrawerPoints()
         game = Game.first
-        winning_drawer = User.find(game.drawer_id)
+        winning_drawer = User.find_by(name: game.drawer_name)
         if winning_drawer
             drawer_games_won = winning_drawer.games_won.to_i + 1
             winning_drawer.update(games_won: drawer_games_won)
