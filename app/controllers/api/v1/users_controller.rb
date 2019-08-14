@@ -32,4 +32,3 @@ class Api::V1::UsersController < ApplicationController
         params.require(:user).permit(:name, :games_won)
     end
 end
-sd
