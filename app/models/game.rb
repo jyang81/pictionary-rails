@@ -9,9 +9,9 @@ class Game < ApplicationRecord
                 content: "Attention please, #{guess.user_name} guessed correctly with #{guess.content}",
                 user_id: 1,
                 user_name:'Game Host')
-            
-            game_command = GameManager.new(command: 'updatedGameState', payload: ['End'])
-            GameManagerCreationEventBroadcastJob.perform_now(game_command)
+                
+                game_command = GameManager.new(command: 'updatedGameState', payload: ['End'])
+                GameManagerCreationEventBroadcastJob.perform_now(game_command)
         end 
     end
 
