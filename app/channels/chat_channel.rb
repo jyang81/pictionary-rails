@@ -6,11 +6,11 @@ class ChatChannel < ApplicationCable::Channel
     def unsubscribed; end
   
     def create(opts)
-      ChatMessage.create(
+      message = ChatMessage.create(
         content: opts.fetch('content'),
         user_id:  opts.fetch('user_id'),
         user_name: opts.fetch('user_name'),
       )
-      Game.checkForWinner(opts)
+      Game.checkForWinner(message)
       end
   end
