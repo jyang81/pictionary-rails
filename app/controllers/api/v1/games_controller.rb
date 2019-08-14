@@ -21,7 +21,7 @@ class Api::V1::GamesController < ApplicationController
             GameManagerCreationEventBroadcastJob.perform_now(game_command)
             render json: @game
         end
-        else
+        if Game.all.count > 0
             render json: Game.first
         end
     end
