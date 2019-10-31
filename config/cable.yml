@@ -8,3 +8,7 @@ production:
   adapter: redis
   url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-3-232-189-106.compute-1.amazonaws.com:16639
   channel_prefix: Pictionary_production
+
+# edit this file if REDIS updates!
+# in your terminal, Run `heroku config:get REDIS_URL`
+# Copy and replace the above URL with that one
