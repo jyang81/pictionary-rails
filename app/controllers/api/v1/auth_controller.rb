@@ -3,11 +3,18 @@ class Api::V1::AuthController < ApplicationController
   
     # login
     def create
-      @user = User.find_or_create_by(name: params[:name])
+      username = params[:name].downcase
+      @user = User.find_by(name: username)
+      if !@user 
+        User.create(name: username)
+      end
       if @user
         # encode token comes from ApplicationController
         if Game.all.length > 0
-          GameManager.create(command: 'Started')
+          game_command = GameManager.new # refactor this to live in Game class
+          game_command.command = "updatedGameState"
+          game_command.payload = ["Started"]
+          GameManagerCreationEventBroadcastJob.perform_now(game_command)
         end
         token = encode_token({ user_id: @user.id })
         render json: { user: @user, jwt: token }, status: :accepted
