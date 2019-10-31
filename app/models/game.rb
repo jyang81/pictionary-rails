@@ -10,8 +10,11 @@ class Game < ApplicationRecord
                 user_id: 1,
                 user_name:'Game Host')
                 
-                game_command = GameManager.new(command: 'updatedGameState', payload: ['End'])
-                GameManagerCreationEventBroadcastJob.perform_now(game_command)
+            game_command = GameManager.new(command: 'updatedGameState', payload: ['End'])
+            GameManagerCreationEventBroadcastJob.perform_now(game_command)
+            Game.destroy_all
+            Line.destroy_all
+            ChatMessage.destroy_all
         end 
     end
 
