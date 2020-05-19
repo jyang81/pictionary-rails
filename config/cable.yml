@@ -6,8 +6,8 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-52-1-180-154.compute-1.amazonaws.com:31669
-  # updated 03.06.2020
+  url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-52-200-247-213.compute-1.amazonaws.com:6689
+  # updated 5.019.2020
   channel_prefix: Pictionary_production
 
 # edit this file if REDIS updates!
