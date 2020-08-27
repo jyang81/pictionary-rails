@@ -7,10 +7,11 @@ test:
 production:
   adapter: redis
   url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-3-93-204-253.compute-1.amazonaws.com:13579
-  # updated 7.2.2020
+  # updated 8.27.2020
   channel_prefix: Pictionary_production
 
 # edit this file if REDIS updates!
 # in your terminal, Run `heroku config:get REDIS_URL`
 # Copy and replace the above URL with that one
 # Figure out a way to automate this
+# https://devcenter.heroku.com/articles/config-vars#accessing-config-var-values-from-code

@@ -7,34 +7,55 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.destroy_all
-Game.destroy_all
+# User.destroy_all
+# Game.destroy_all
 Word.destroy_all
 
-Word.create(word: "Postgres")
-Word.create(word: "whale")
-Word.create(word: "water bottle")
-Word.create(word: "whiteboard")
-Word.create(word: "Spiderman")
-Word.create(word: "campfire")
-Word.create(word: "keyboard")
-Word.create(word: "React")
-Word.create(word: "IPA")
-Word.create(word: "train")
-Word.create(word: "battery")
-Word.create(word: "giraffe")
-Word.create(word: "ice cube")
-Word.create(word: "Steve")
-Word.create(word: "Flatiron")
-Word.create(word: "zombie")
-Word.create(word: "dragon")
+# Coding
 Word.create(word: "Ruby")
-Word.create(word: "puzzle")
-Word.create(word: "robot")
+Word.create(word: "React")
+Word.create(word: "Python")
+Word.create(word: "bootcamp")
+Word.create(word: "stack")
+
+# Places
 Word.create(word: "Seattle")
+Word.create(word: "New York")
+Word.create(word: "Paris")
+Word.create(word: "Seoul")
+Word.create(word: "San Francisco")
+
+# Tech
+Word.create(word: "Zoom")
+Word.create(word: "keyboard")
 Word.create(word: "computer")
-Word.create(word: "eagle")
-Word.create(word: "Superman")
 Word.create(word: "iPhone")
-Word.create(word: "mouse")
-Word.create(word: "poker")
+Word.create(word: "cloud")
+
+# Food
+Word.create(word: "pizza")
+Word.create(word: "sushi")
+Word.create(word: "pineapple")
+Word.create(word: "beer")
+Word.create(word: "coffee")
+
+# Random
+Word.create(word: "snowman")
+Word.create(word: "castle")
+Word.create(word: "mask")
+Word.create(word: "sports")
+Word.create(word: "backpack")
+
+# Superheroes
+Word.create(word: "Batman")
+Word.create(word: "Spiderman")
+Word.create(word: "Wolverine")
+Word.create(word: "Avengers")
+Word.create(word: "Captain Planet")
+
+# Animals
+Word.create(word: "giraffe")
+Word.create(word: "shrimp")
+Word.create(word: "penguin")
+Word.create(word: "shark")
+Word.create(word: "dragon")
