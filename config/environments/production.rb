@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   config.action_cable.allowed_request_origins = [ 'https://react-pictionary.herokuapp.com', 'http://react-pictionary.herokuapp.com' ]
 
-  config.action_cable_url = "wss://react-pictionary-backend.herokuapp.com/api/v1/cable"
+  # config.action_cable_url = "wss://react-pictionary-backend.herokuapp.com/api/v1/cable"
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
