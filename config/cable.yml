@@ -6,9 +6,10 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-3-220-64-173.compute-1.amazonaws.com:19209
-  # updated 10.10.2020
+  url: <%= ENV['REDIS_PROVIDER'] %>
   channel_prefix: Pictionary_production
+
+# updated 10.10.2020 (Possible fix - source: https://www.nopio.com/blog/setup-rails-application-heroku/)
 
 # edit this file if REDIS updates!
 # in your terminal, Run `heroku config:get REDIS_URL`
