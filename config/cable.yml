@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: heroku config: get REDIS_URL
+  url: 'heroku config: get REDIS_URL'
   channel_prefix: Pictionary_production
 
 # edit this file if REDIS updates!
