@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: REDIS_URL
+  url: process.env.REDIS_URL
   channel_prefix: Pictionary_production
 
 # updated 10.27.2020 (Possible fix - source: https://www.nopio.com/blog/setup-rails-application-heroku/)
