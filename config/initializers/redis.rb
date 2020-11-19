@@ -1,2 +1,2 @@
 # $redis = Redis.new(url: ENV["REDIS_URL"])
-$redis = Redis.new(url: ENV['redis_url'])
+$redis = Redis.new(url: REDIS_URL)
