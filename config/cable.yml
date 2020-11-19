@@ -6,17 +6,17 @@ test:
 
 production:
   adapter: redis
-  url: ENV["REDIS_URL"]
+  url: heroku config: get REDIS_URL
   channel_prefix: Pictionary_production
-
-# updated 10.27.2020 (Possible fix - source: https://www.nopio.com/blog/setup-rails-application-heroku/)
-# Didn't work. Reverted back to actual url for now. Try again later.
 
 # edit this file if REDIS updates!
 # in your terminal, Run `heroku config:get REDIS_URL`
 # Copy and replace the above URL with that one
 # Figure out a way to automate this
 # https://devcenter.heroku.com/articles/config-vars#accessing-config-var-values-from-code
+
+# 10/27/20 - (Possible fix - source: https://www.nopio.com/blog/setup-rails-application-heroku/)
+# Didn't work. Reverted back to actual url for now. Try again later.
 
 # 11/19/20 - Trying to hide redis url as GitGuardian keeps sending me warnings
 # (GitGuardian has detected the following Redis URI exposed within your GitHub account.)
