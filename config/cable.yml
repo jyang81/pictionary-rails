@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:p84c1635e0315343eab147140c48c268a2fbe7e1b18ec22e88dcd9e2ec479789d@ec2-3-214-226-111.compute-1.amazonaws.com:20819
+  url: ENV['redis_url']
   channel_prefix: Pictionary_production
 
 # updated 10.27.2020 (Possible fix - source: https://www.nopio.com/blog/setup-rails-application-heroku/)
@@ -17,3 +17,7 @@ production:
 # Copy and replace the above URL with that one
 # Figure out a way to automate this
 # https://devcenter.heroku.com/articles/config-vars#accessing-config-var-values-from-code
+
+# 11/19/20 - Trying to hide redis url as GitGuardian keeps sending me warnings
+# (GitGuardian has detected the following Redis URI exposed within your GitHub account.)
+# Installed 'figaro' gem and followed instructions per "https://medium.com/better-programming/how-to-hide-your-api-keys-c2b952bc07e6"
